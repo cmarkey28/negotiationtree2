@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Negotiation Tree: 60–90 Days Past Due</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Lato&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+      line-height: 1.5;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      color: #2c3e50;
+    }
+    details {
+      margin-bottom: 12px;
+      border-left: 4px solid #3498db;
+      padding-left: 10px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      color: #2980b9;
+    }
+    .response, .action {
+      margin-left: 20px;
+      color: #2c3e50;
+      font-weight: 500;
+    }
+    .option {
+      margin-left: 40px;
+      font-style: italic;
+      color: #7f8c8d;
+    }
+    .label {
+      font-weight: bold;
+      color: #8e44ad;
+      margin-top: 8px;
+      display: block;
+    }
+    .instructions {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #e8f4fd;
+      border-left: 5px solid #3498db;
+      border-radius: 6px;
+    }
+    .footer-blurb {
+      margin-top: 40px;
+      padding: 15px;
+      background-color: #fef8e7;
+      border-left: 5px solid #f39c12;
+      border-radius: 6px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧭 Negotiation Adventure Tree</h1>
+
+  <div class="instructions">
+    <strong>How to Use This Tree:</strong><br>
+    This interactive tool guides agents through the negotiation process step-by-step. Begin at the top with the Full Past Due Payment offer and follow the path that matches the borrower's response. Expand each section to view agent scripting, borrower replies, rebuttal options, and the required agent actions.
+  </div>
+
+  <details>
+    <summary>🚀 Offer: Full Past Due Payment</summary>
+    <span class="label">Agent Response:</span>
+    <div class="response">"Per your Right to Cure notice, the full past due amount of $[amount] is due to bring your loan current and avoid potential repossession after day 90. Can we assist you in making that payment today?"</div>
+    <span class="label">Agent Action:</span>
+    <div class="action">If borrower agrees, schedule the payment. If not, move to rebuttal options below.</div>
+
+    <details>
+      <summary>💬 Borrower: "That’s too much. I can’t do all of that today."</summary>
+      <span class="label">Rebuttal Option 1:</span>
+      <div class="option">"I understand it’s a significant amount. If paying in full isn’t possible today, we may be able to find a payment that prevents further escalation, even if it doesn’t fully cure the loan."</div>
+      <span class="label">Rebuttal Option 2:</span>
+      <div class="option">"Just to be transparent, your Right to Cure notice expires on XX date. A partial payment won’t satisfy the Right to Cure, but it may help avoid repossession if it keeps your delinquency under 90 days. Let’s explore what you can pay today."</div>
+      <span class="label">Rebuttal Option 3:</span>
+      <div class="option">"The notice reflects what’s required to bring the loan current per the contract. Internally, we also evaluate good-faith efforts. Making a substantial payment could help keep the loan out of repossession."</div>
+
+      <details>
+        <summary>🔁 Borrower Declines → Minimum Monthly Payment</summary>
+        <span class="label">Agent Response:</span>
+        <div class="response">"Would you be able to make your standard monthly payment of $[amount] today? While it won’t bring the loan current, it may help reduce the days past due and show good faith. Can we set that up today with the ACH banking (or debit card if eligible) on file?"</div>
+        <span class="label">Agent Action:</span>
+        <div class="action">If borrower agrees, schedule payment. If not, proceed to rebuttal options.</div>
+
+        <details>
+          <summary>💬 Borrower: "I can only do part of the minimum."</summary>
+          <span class="label">Rebuttal Option 1:</span>
+          <div class="option">"It may not cure the loan fully, but it helps demonstrate your commitment to resolution and can influence our ability to hold off on repossession."</div>
+          <span class="label">Rebuttal Option 2:</span>
+          <div class="option">"Let’s work together to determine what you can manage today. Even a smaller payment may help us determine next steps and keep options open."</div>
+          <span class="label">Rebuttal Option 3:</span>
+          <div class="option">"Every dollar you apply helps protect your loan from further action. Let’s figure out how to make a meaningful step today. I’ll take what you can do and get it noted before any further steps are taken."</div>
+
+          <details>
+            <summary>🔁 Borrower Declines → Stabilization Payment</summary>
+            <span class="label">Agent Response:</span>
+            <div class="response">"Even a smaller stabilization payment today can help demonstrate your intent to resolve this. What amount are you able to pay right now?"</div>
+            <span class="label">Agent Action:</span>
+            <div class="action">If borrower agrees, schedule payment. If not, proceed to next option or hardship discussion.</div>
+
+            <details>
+              <summary>💬 Borrower: "I can do something small, but it won’t make a dent."</summary>
+              <span class="label">Rebuttal Option 1:</span>
+              <div class="option">"It may not solve everything, but it shows continued engagement and may qualify you for additional options. Even small steps matter."</div>
+              <span class="label">Rebuttal Option 2:</span>
+              <div class="option">"Please know that making some form of payment today may help you avoid repossession in the near future. If a vehicle is repossessed, the amount owed includes all past due payments plus repossession-related fees."</div>
+              <span class="label">Rebuttal Option 3:</span>
+              <div class="option">"Can we take even a small payment today to demonstrate commitment to retain the vehicle and establish a solid plan to reduce your delinquency over time?"</div>
+
+              <details>
+                <summary>🔁 Borrower Declines → Hardship or Settlement</summary>
+                <span class="label">Agent Response:</span>
+                <div class="response">"We do have hardship relief programs. Would you like to hear about these options?"</div>
+                <span class="label">Agent Action:</span>
+                <div class="action">Ask probing questions: “How are you handling your other bills?” “What has changed since your last payment?” Assist borrower or transfer to hardship/settlement support.</div>
+
+                <details>
+                  <summary>💬 Borrower: "I can’t pay anything right now."</summary>
+                  <span class="label">Rebuttal Option 1:</span>
+                  <div class="option">"I hear you. If no payment is received, your account may enter repo assignment shortly after day 72. We still have time to flag your account for hardship review if we act today."</div>
+                  <span class="label">Rebuttal Option 2:</span>
+                  <div class="option">"At this point, the only way to keep your vehicle from being assigned for recovery is either payment or hardship. We're in the critical window before vendor assignment. By starting hardship today, we’re at least showing Upstart that action is in progress."</div>
+                </details>
+              </details>
+            </details>
+          </details>
+        </details>
+      </details>
+    </details>
+  </details>
+
+  <details>
+    <summary>✅ Commitment from the Borrower</summary>
+    <span class="label">Agent Action:</span>
+    <div class="response">If borrower agrees to pay, schedule payment by phone using ACH or debit. Confirm: "To move forward with scheduling your payment, I just need to confirm—are the funds available in your bank account today?"</div>
+  </details>
+
+  <div class="footer-blurb">
+    💬 <strong>Reminder for Agents:</strong><br>
+    Ask thoughtful, open-ended questions to surface borrower challenges and demonstrate empathy. Even if full payment isn’t possible, any committed effort can delay repossession and open the door for further solutions.
+  </div>
+</body>
+</html>
